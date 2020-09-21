@@ -1,16 +1,11 @@
-all: clean prepare run package
+get:
+	scp 192.168.0.25:laundry_stats ./data
 
-clean:
-	rm data
-	rm -r plots
-	rm laundry_plots.zip
-	pipenv --rm
+install:
+	pipenv install
 
 prepare:
 	mkdir plots
-	scp git.blokzijl.family:both ./data
-	jupyter nbconvert --to script main.ipynb
-	pipenv install
 
 run:
 	pipenv run python main.py
@@ -18,4 +13,20 @@ run:
 package:
 	cp data plots/data.txt
 	zip -r laundry_plots.zip plots
+
+clean:
+	rm data
+	rm -r plots
+	rm laundry_plots.zip
+
+build:
+	rm main.py
+	jupyter nbconvert --to script main.ipynb
+
+uninstall:
+	pipenv --rm
+
+all: clean prepare run package
+
+full: install get build all uninstall
 
