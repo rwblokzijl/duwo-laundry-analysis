@@ -1,5 +1,4 @@
 all: clean prepare run package
-	./get_and_generate_plots.sh
 
 clean:
 	rm data
