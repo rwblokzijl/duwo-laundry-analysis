@@ -1,9 +1,0 @@
-Hier wat stats over de downtime
-
-Het systeem was down:
-2019/10/12 23:20 - 2019/10/13 04:10
-2019/10/13 04:30 - 2019/10/13 08:05
-2019/10/13 08:40 - 2019/10/14 08:45
-
-Totale probleemduur: 1 dag 9 uur 5 minuten
-Totale downtime: 1 dag 8 uur 10 minuten
