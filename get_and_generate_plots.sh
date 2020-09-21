@@ -2,10 +2,11 @@
 
 # Clear old outputs and data, so we error properly when stale
 rm data
-rm plots/*
+rm -r plots
 rm laundry_plots.zip
 
 # Prepare data, script and environment
+mkdir plots
 scp git.blokzijl.family:both ./data
 jupyter nbconvert --to script main.ipynb
 pipenv install
