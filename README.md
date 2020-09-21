@@ -7,12 +7,12 @@ availability.
 
 The project has 2 parts:
 
- - The scraper bot (scraper.py)
- - The analysis script (main.py)
+ - The scraper bot (`scraper.py`)
+ - The analysis script (`main.py`)
 
 ## The scraper bot
 
-The scraper.py script will log on to the site and log the availability into a
+The `scraper.py` script will log on to the site and log the availability into a
 file. It should run periodically (like every 5 minutes) on a server (i use a
 raspberry pi)
 
