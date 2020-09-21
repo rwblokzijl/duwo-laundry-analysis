@@ -1,4 +1,7 @@
+all: clean prepare run package
+
 get:
+	rm data || true
 	scp 192.168.0.25:laundry_stats ./data
 
 install:
@@ -15,18 +18,15 @@ package:
 	zip -r laundry_plots.zip plots
 
 clean:
-	rm data
-	rm -r plots
-	rm laundry_plots.zip
+	rm -r plots || true
+	rm laundry_plots.zip || true
 
 build:
-	rm main.py
+	rm main.py || true
 	jupyter nbconvert --to script main.ipynb
 
 uninstall:
 	pipenv --rm
-
-all: clean prepare run package
 
 full: install get build all uninstall
 
