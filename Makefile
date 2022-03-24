@@ -1,5 +1,8 @@
 all: clean prepare run package
 
+dev:
+	pipenv run jupyter notebook
+
 get:
 	rm data || true
 	scp 192.168.0.25:laundry_stats ./data
